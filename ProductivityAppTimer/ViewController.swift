@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     }
 
     func resetTimer() {
-        minutes = 1
+        minutes = 45
         seconds = 0
         timerProgress.progress = 0
     }
