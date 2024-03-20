@@ -48,6 +48,9 @@ class ViewController: UIViewController {
                 self.updateUI()
             } else {
                 self.seconds -= 1
+                let secondsCounter = self.minutes * 60 + self.seconds
+                print(1 - (Float(secondsCounter) / 2698))
+                self.timerProgress.progress = 1 - (Float(secondsCounter) / 2698)
                 self.updateUI()
             }
         }
@@ -60,5 +63,3 @@ class ViewController: UIViewController {
     }
     
 }
-
-// TODO: реализовать функционал timerProgress'а
