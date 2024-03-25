@@ -11,20 +11,31 @@ class ViewController: UIViewController {
     
     var mainTimer = Timer()
     
+    @IBOutlet weak var TextSelector: UILabel!
     @IBOutlet weak var timer: UILabel!
     @IBOutlet weak var timerProgress: UIProgressView!
     
     var minutes = 0
     var seconds = 0
+    var stableSecondsCounter = 0
     
     override func viewDidLoad() {
-        resetTimer()
+        TextSelector.text = "Press start button"
+        resetWorkTimer()
         updateUI()
     }
 
-    func resetTimer() {
+    func resetWorkTimer() {
         minutes = 45
         seconds = 0
+        stableSecondsCounter = minutes * 60 + seconds
+        timerProgress.progress = 0
+    }
+    
+    func resetRelaxTimer() {
+        minutes = 15
+        seconds = 0
+        stableSecondsCounter = minutes * 60 + seconds
         timerProgress.progress = 0
     }
 
@@ -35,31 +46,33 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startButton(_ sender: UIButton) {
+        TextSelector.text = "Time to work:"
         mainTimer.invalidate()
-        resetTimer()
+        resetWorkTimer()
         updateUI()
         
-        mainTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (Timer) in
+        mainTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (Timer) in
             if self.minutes == 0 && self.seconds == 0 {
-                self.mainTimer.invalidate()
+                self.TextSelector.text = "Chill:"
+                self.resetRelaxTimer()
             } else if self.seconds.self == 0 {
                 self.minutes -= 1
                 self.seconds = 59
                 self.updateUI()
             } else {
                 self.seconds -= 1
-                let secondsCounter = self.minutes * 60 + self.seconds
-                print(1 - (Float(secondsCounter) / 2698))
-                self.timerProgress.progress = 1 - (Float(secondsCounter) / 2698)
+                let activeSecondsCounter = self.minutes * 60 + self.seconds
+                print(1 - (Float(activeSecondsCounter) / 2698))
+                self.timerProgress.progress = 1 - (Float(activeSecondsCounter) / Float(self.stableSecondsCounter))
                 self.updateUI()
             }
         }
     }
     
     @IBAction func resetButton(_ sender: UIButton) {
+        TextSelector.text = "Press start button"
         mainTimer.invalidate()
-        resetTimer()
+        resetWorkTimer()
         updateUI()
     }
-    
 }

@@ -51,6 +51,13 @@
                                     <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="js0-PP-Q8N"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chill:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6B-W7-Q32" userLabel="TextSelector">
+                                <rect key="frame" x="75" y="201" width="243" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -73,6 +80,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="TextSelector" destination="J6B-W7-Q32" id="ugH-iC-g3W"/>
                         <outlet property="timer" destination="d0V-J4-f7V" id="9OO-Va-Nvf"/>
                         <outlet property="timerProgress" destination="5mt-QB-rE7" id="b5h-Ls-qIO"/>
                     </connections>
