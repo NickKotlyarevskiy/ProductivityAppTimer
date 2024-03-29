@@ -37,6 +37,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5652464D2BB6DA3900D225F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56894E9A2BAAB5B000AE5DFF /* Main.storyboard */,
+				56894E9F2BAAB5B200AE5DFF /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5652464E2BB6DA6600D225F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				56894E942BAAB5B000AE5DFF /* AppDelegate.swift */,
+				56894E962BAAB5B000AE5DFF /* SceneDelegate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5652464F2BB6DA8500D225F6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56894E982BAAB5B000AE5DFF /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		56894E882BAAB5B000AE5DFF = {
 			isa = PBXGroup;
 			children = (
@@ -56,12 +82,10 @@
 		56894E932BAAB5B000AE5DFF /* ProductivityAppTimer */ = {
 			isa = PBXGroup;
 			children = (
-				56894E942BAAB5B000AE5DFF /* AppDelegate.swift */,
-				56894E962BAAB5B000AE5DFF /* SceneDelegate.swift */,
-				56894E982BAAB5B000AE5DFF /* ViewController.swift */,
-				56894E9A2BAAB5B000AE5DFF /* Main.storyboard */,
+				5652464E2BB6DA6600D225F6 /* Model */,
+				5652464D2BB6DA3900D225F6 /* View */,
+				5652464F2BB6DA8500D225F6 /* Controller */,
 				56894E9D2BAAB5B200AE5DFF /* Assets.xcassets */,
-				56894E9F2BAAB5B200AE5DFF /* LaunchScreen.storyboard */,
 				56894EA22BAAB5B200AE5DFF /* Info.plist */,
 			);
 			path = ProductivityAppTimer;
